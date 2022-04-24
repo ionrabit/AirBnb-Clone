@@ -29,8 +29,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+THIRD_PARTY_APPS = ["django_countries"]
+
 DJANGO_APPS = [
-     'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -38,8 +40,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS = ["users.apps.UsersConfig"]
-
+PROJECT_APPS = ["core.apps.CoreConfig","users.apps.UsersConfig","rooms.apps.RoomsConfig"]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
@@ -123,4 +124,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#Usng Custom Model
 AUTH_USER_MODEL = 'users.User'
