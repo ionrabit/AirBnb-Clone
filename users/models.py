@@ -1,9 +1,10 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 class User(AbstractUser):
     """ Custom User Model Defined"""
- 
+
     GENDER_MALE = "male"
     GENDER_FEMALE = "female"
     GENDER_OTHER = "other"
@@ -16,14 +17,16 @@ class User(AbstractUser):
 
     LANGUAGE_ENGLISH = "en"
     LANGUAGE_KOREAN = "kr"
-    LANGUAGE_CHOICES = ((LANGUAGE_ENGLISH, "English"), (LANGUAGE_KOREAN, "Korean"))
+    LANGUAGE_CHOICES = ((LANGUAGE_ENGLISH, "English"),
+                        (LANGUAGE_KOREAN, "Korean"))
 
     CURRENCY_USD = "usd"
-    CURRENCY_USD = "krw"
-    CURRENCY_CHOICES = ((CURRENCY_USD, "USD"), (CURRENCY_USD, "KRW"))
+    CURRENCY_KRW = "krw"
+    CURRENCY_CHOICES = ((CURRENCY_USD, "USD"), (CURRENCY_KRW, "KRW"))
 
     avatar = models.ImageField(null=True, blank=True)
-    gender = models.CharField(choices=GENDER_CHOICES, max_length=10, null=True, blank=True)
+    gender = models.CharField(choices=GENDER_CHOICES,
+                              max_length=10, null=True, blank=True)
     bio = models.TextField(default="", blank=True)
     birthdate = models.DateField(null=True)
     language = models.CharField(

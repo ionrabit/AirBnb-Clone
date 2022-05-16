@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-THIRD_PARTY_APPS = ["django_countries"]
+THIRD_PARTY_APPS = ["django_countries", "django_seed"]
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -40,7 +40,8 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-PROJECT_APPS = ["core.apps.CoreConfig","users.apps.UsersConfig","rooms.apps.RoomsConfig","reviews.apps.ReviewsConfig","reservations.apps.ReservationsConfig","lists.apps.ListsConfig","conversations.apps.ConversationsConfig",]
+PROJECT_APPS = ["core.apps.CoreConfig", "users.apps.UsersConfig", "rooms.apps.RoomsConfig", "reviews.apps.ReviewsConfig",
+                "reservations.apps.ReservationsConfig", "lists.apps.ListsConfig", "conversations.apps.ConversationsConfig", ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
@@ -124,5 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#Usng Custom Model
+# Usng Custom Model
 AUTH_USER_MODEL = 'users.User'
+
+# Image Upload Root Set
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+MEDIA_URL = "/media/"
