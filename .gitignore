@@ -156,3 +156,6 @@ cython_debug/
 
 #BrewSetting
 Brewfile
+
+# Backup File
+.bak
